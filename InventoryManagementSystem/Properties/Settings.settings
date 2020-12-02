@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InventoryManagementSystem.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RabbitMQUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Redacted</Value>
+    </Setting>
+    <Setting Name="RabbitMQPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Redacted</Value>
+    </Setting>
+    <Setting Name="RabbitMQVhost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">development</Value>
+    </Setting>
+    <Setting Name="RabbitMQAMQPS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">amqps://Redacted.mq.eu-west-1.amazonaws.com:5671</Value>
+    </Setting>
+    <Setting Name="RabbitMQExchange" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RabbitMQQueue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">test-queue1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

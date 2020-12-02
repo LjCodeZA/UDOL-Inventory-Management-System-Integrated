@@ -1,0 +1,93 @@
+﻿@model IEnumerable<InventoryManagementSystem.ViewModels.ProductVendorStockGrouping>
+
+@{
+    ViewBag.Title = "Stock Levels";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#recalcStock').click(function () {
+            $.ajax({
+                url: "/ProductVendorStockGrouping/RecalculateStock",
+                success: function (data) {
+                    if (data == 1) {
+                        location.reload(true);
+                    }
+                }
+            });
+        });
+
+    });
+
+</script>
+
+<h4>Stock Levels</h4>
+
+<button id="recalcStock" type="button" class="btn btn-dark float-right">Re-Calculate Stock</button>
+
+<br />
+<br />
+
+
+<table class="table">
+    <tr>
+        <td>
+            <b>Product Vendor ID</b>
+        </td>
+        <td>
+            <b>Product Name</b>
+        </td>
+        <td>
+            <b>Vendor Name</b>
+        </td>
+        <td>
+            <b>Quantity</b>
+        </td>
+        <td>
+            <b>Stock Take Date</b>
+        </td>
+        <td>
+        </td>
+    </tr>
+
+    @foreach (var productVendorStock in Model)
+    {
+        foreach (var item in productVendorStock.ProductVendorStock)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductVendorId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VendorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockTakeDate)
+                </td>
+            </tr>
+        }
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                <b>Total:</b>
+            </td>
+            <td>
+                <b>@Html.DisplayFor(modelItem => productVendorStock.Quantity)</b>
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+</table>
